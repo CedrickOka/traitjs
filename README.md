@@ -1,45 +1,37 @@
-![CacheJs Logo](./images/logo.png)
+![TraitJs Logo](./images/logo.png)
 
-# CacheJs
-> javascript, cache system, SessionStorage, LocalStorage
+# TraitJs
+> javascript, PHP trait polyfill
 
-Cachejs is a library that will allow you to set up a private and powerful cache system in your javascript application.
+Traitjs is a library that will allow you to set up PHP trait concept..
 
-[![GitHub version](https://badge.fury.io/gh/CedrickOka%2Fcachejs.svg)](https://badge.fury.io/gh/CedrickOka%2Fcachejs)
-[![GitHub issues](https://img.shields.io/github/issues/CedrickOka/cachejs.svg)](https://github.com/CedrickOka/cachejs/issues)
-[![GitHub forks](https://img.shields.io/github/forks/CedrickOka/cachejs.svg)](https://github.com/CedrickOka/cachejs/network)
-[![GitHub stars](https://img.shields.io/github/stars/CedrickOka/cachejs.svg)](https://github.com/CedrickOka/cachejs/stargazers)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/CedrickOka/cachejs/master/LICENSE)
+[![GitHub version](https://badge.fury.io/gh/CedrickOka%2Ftraitjs.svg)](https://badge.fury.io/gh/CedrickOka%2Ftraitjs)
+[![GitHub issues](https://img.shields.io/github/issues/CedrickOka/traitjs.svg)](https://img.shields.io/github/issues/CedrickOka/traitjs.svg)
+[![GitHub forks](https://img.shields.io/github/forks/CedrickOka/traitjs.svg)](https://img.shields.io/github/forks/CedrickOka/traitjs.svg)
+[![GitHub stars](https://img.shields.io/github/stars/CedrickOka/traitjs.svg)](https://github.com/CedrickOka/traitjs/stargazers)
+[![GitHub license](https://img.shields.io/github/license/CedrickOka/traitjs.svg)](https://github.com/CedrickOka/traitjs/blob/master/LICENSE)
 
 ## Installing / Getting started
 
 If you want to try the sample codes below, just open your browser's console and enter them.
 
-Cache.js is available on [github.com](https://github.com/CedrickOka/cachejs).
+Trait.js is available on [github.com](https://github.com/CedrickOka/traitjs).
 
 ### Browser
 
 ```html
-<script type="text/javascript" src="cache.js"></script>
+<script type="text/javascript" src="trait.js"></script>
 <script>
-    var cache = new Cache.Memory(25, 300);
+    var Behavior = function(){
+        this.hello = function(message){
+            console.log(message);
+        };
+    };
 
-    cache.onWrite(function(key, data){
-    	console.log('An entry has been added to the cache with the key "' + key + '" : ');
-    	console.log(data);
-    });
+    var context = {};
 
-    cache.onRead(function(key, data){
-    	console.log('An entry was read in the cache with the key "' + key + '" : ');
-    	console.log(data);
-    });
-
-    cache.write('cachejs', {foo: 'foo'});
-
-    if (cache.has('cachejs')) {
-    	var data = cache.read('cachejs');
-    	console.log(data);
-    }
+    Trait.use(Behavior, context);
+    context.hello('Hello World !'); // print: Hello World !
 </script>
 ```
 
@@ -52,25 +44,17 @@ require.config({
 	}
 });
 
-define(['cache'], function (Cache) {
-    var cache = new Cache.Memory(25, 300);
+define(['trait'], function (Trait) {
+    var Behavior = function(){
+        this.hello = function(message){
+            console.log(message);
+        };
+    };
 
-    cache.onWrite(function(key, data){
-    	console.log('An entry has been added to the cache with the key "' + key + '" : ');
-    	console.log(data);
-    });
+    var context = {};
 
-    cache.onRead(function(key, data){
-    	console.log('An entry was read in the cache with the key "' + key + '" : ');
-    	console.log(data);
-    });
-
-    cache.write('cachejs', {foo: 'foo'});
-
-    if (cache.has('cachejs')) {
-    	var data = cache.read('cachejs');
-    	console.log(data);
-    }
+    Trait.use(Behavior, context);
+    context.hello('Hello World !'); // print: Hello World !
 });
 ```
 
