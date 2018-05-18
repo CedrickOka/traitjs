@@ -18,12 +18,10 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
-    "node_modules",
-    "bower_components",
     "test",
     "tests",
-    "cachejs.sublime-project",
-    "cachejs.sublime-workspace"
+    "node_modules",
+    "bower_components"
   ],
-  "homepage": "https://github.com/CedrickOka/cachejs"
+  "homepage": "https://github.com/CedrickOka/traitjs"
 }

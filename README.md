@@ -1,4 +1,4 @@
-![TraitJs Logo](./images/logo.png)
+#![TraitJs Logo](./images/logo.png)
 
 # TraitJs
 > javascript, PHP trait polyfill
@@ -22,16 +22,23 @@ Trait.js is available on [github.com](https://github.com/CedrickOka/traitjs).
 ```html
 <script type="text/javascript" src="trait.js"></script>
 <script>
-    var Behavior = function(){
-        this.hello = function(message){
+    var AlertBehavior = function(){
+        this.alert = function(message){
+            alert(message);
+        };
+    };
+    var ConsoleLogBehavior = function(){
+        this.console = function(message){
             console.log(message);
         };
     };
 
     var context = {};
+    Trait.use(AlertBehavior, context);
+    Trait.use(ConsoleLogBehavior, context);
 
-    Trait.use(Behavior, context);
-    context.hello('Hello World !'); // print: Hello World !
+    context.alert('Hello World !'); // print: Hello World !
+    context.console('Hello World !'); // print: Hello World !
 </script>
 ```
 
@@ -40,21 +47,28 @@ Trait.js is available on [github.com](https://github.com/CedrickOka/traitjs).
 ```javascript
 require.config({
 	paths: {
-		cache: 'cache.js',
+		trait: 'trait.js',
 	}
 });
 
 define(['trait'], function (Trait) {
-    var Behavior = function(){
-        this.hello = function(message){
+    var AlertBehavior = function(){
+        this.alert = function(message){
+            alert(message);
+        };
+    };
+    var ConsoleLogBehavior = function(){
+        this.console = function(message){
             console.log(message);
         };
     };
 
     var context = {};
+    Trait.use(AlertBehavior, context);
+    Trait.use(ConsoleLogBehavior, context);
 
-    Trait.use(Behavior, context);
-    context.hello('Hello World !'); // print: Hello World !
+    context.alert('Hello World !'); // print: Hello World !
+    context.console('Hello World !'); // print: Hello World !
 });
 ```
 

@@ -17,8 +17,10 @@
 	'use strict';
 	
 	return {
-		use: function(behavior, context){
-			behavior.call(context);
+		use: function(behavior, context, options){
+			if (typeof behavior === 'function') {
+				behavior.call(context, options);
+			}
 		}
 	};
 });
