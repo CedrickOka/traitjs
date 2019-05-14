@@ -1,6 +1,10 @@
 Changelog
 =========
 
+#### 1.1.2 (2019-05-14)
+
+* Fixed error `README.md` file.
+
 #### 1.1.1 (2019-05-14)
 
 * Updated `README.md` file.

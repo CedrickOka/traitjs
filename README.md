@@ -13,11 +13,15 @@ Traitjs is a library that will allow you to set up PHP trait concept..
 
 ## Installing / Getting started
 
-If you have bower installed then install project dependencies.
+Source can be loaded via bower or downloaded from this [repo](https://github.com/CedrickOka/traitjs).
+If you don't use a module loader it will be added to window.Trait
 
 ```
-$ bower install 
+# bower
+$ bower install jquery-i18next
 ```
+
+If you want to try the sample codes below, just open your browser's console and enter them.
 
 ### Browser
 
