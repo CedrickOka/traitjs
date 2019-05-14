@@ -17,10 +17,12 @@
 	'use strict';
 	
 	return {
-		use: function(behavior, context, options){
-			if (typeof behavior === 'function') {
-				behavior.call(context, options);
+		use: function(behavior, context, args){
+			if (typeof behavior !== 'function') {
+				throw 'Argument 1 of the use() method must be of type "function", type "' + typeof behavior + '" given.';
 			}
+			
+			behavior.apply(context, args);
 		}
 	};
 });

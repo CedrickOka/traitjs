@@ -10,14 +10,21 @@
   ],
   "keywords": [
     "php",
-    "trait"
+    "trait",
+    "polyfill"
   ],
   "authors": [
     "Cedrick Oka Baidai <okacedrick@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [
+  	"*",
     "**/.*",
+    "!/LICENSE",
+    "!/README.*",
+    "!/CHANGELOG.*",
+    "!/CONTRIBUTING.*",
+	"!/trait.min.js",
     "test",
     "tests",
     "node_modules",

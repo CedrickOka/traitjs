@@ -1,6 +1,12 @@
 Changelog
 =========
 
+#### 1.1.0 (2019-05-14)
+
+* Used apply instead call.
+* Updated `bower.json` defintion.
+* Added mimify source version.
+
 #### 1.0.0 (2018-05-18)
 
 * Updated `README.md`.
